@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-
 #include "Book.h"
 #include "Library.h"
 
@@ -19,17 +18,23 @@ int main() {
     for (const auto& book : library.getBooks()) {
         std::cout << book << std::endl;
     }
+    //vypiš oddělení
+    std::cout << std::endl;
+
     // Vypiš knihy od Jane Austen
     std::cout << "Books by Jane Austen:" << std::endl;
     for (const auto& book : library.findByAuthor("Jane Austen")) {
         std::cout << book << std::endl;
     }
+    std::cout << std::endl;
+
 
     // Vypiš knihy s názvem "The Great Gatsby"
     std::cout << "Books with title \"The Great Gatsby\":" << std::endl;
     for (const auto& book : library.findByTitle("The Great Gatsby")) {
         std::cout << book << std::endl;
     }
+    std::cout << std::endl;
 
     //remove all book copies of Mockingbird
     library.removeBookCopies("To Kill a Mockingbird", 3);
