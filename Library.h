@@ -1,8 +1,6 @@
 //
 // Created by Sikinka on 19.12.2022.
 //
-
-// Library.h
 #ifndef LIBRARYPROJECT_LIBRARY_H
 #define LIBRARYPROJECT_LIBRARY_H
 #pragma once

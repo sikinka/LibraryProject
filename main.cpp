@@ -52,7 +52,8 @@ int main() {
    library.setCopies("Harry Potter and the Philosopher's Stone", 2);
 
     // Vypiš obsah knihovny po odebrání všech kopii The Lord of the Rings a odebrání 3 kopii The Silmarillion a nastavení kopii Harryho Pottera na 2
-    std::cout << std::endl << R"(Books in library after removing all copies of "The Lord of the Rings", 3 out of 4 copies of "Silmarillion" and setting Harry Potter copies to 2)" << std::endl;
+    std::cout << std::endl << R"(Books in library after removing all copies of "The Lord of the Rings", 3 out of 4 copies of "Silmarillion"
+and setting "Harry Potter and the Philosopher's Stone" copies to 2:)" << std::endl;
     for (const auto& book : library.getBooks()) {
         std::cout << book << std::endl;
     }

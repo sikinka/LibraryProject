@@ -1,7 +1,6 @@
 //
 // Created by Sikinka on 19.12.2022.
 //
-
 #ifndef LIBRARYPROJECT_BOOK_H
 #define LIBRARYPROJECT_BOOK_H
 #pragma once
@@ -9,7 +8,6 @@
 #include <iostream>
 #include <string>
 
-// Třída reprezentující jednu knihu v knihovně
 class Book {
 private:
     std::string title_; // drží název knihy
