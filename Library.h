@@ -44,6 +44,8 @@ public:
 
     void attach(Observer* observer);
     void notify();
+
+    void setCopies(const char *string, int i);
 };
 
 #endif // LIBRARYPROJECT_LIBRARY_H

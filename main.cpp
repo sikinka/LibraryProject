@@ -8,42 +8,51 @@ int main() {
     Observer* observer = new SomeObserver();
     library.attach(observer);
 
-    // Přidej několik knih
-    library.addBook(Book("Pride and Prejudice", "Jane Austen", 2));
-    library.addBook(Book("To Kill a Mockingbird", "Harper Lee", 3));
-    library.addBook(Book("The Great Gatsby", "F. Scott Fitzgerald", 4));
+    //přidej několik knih
+    library.addBook(Book("The Hobbit", "J.R.R. Tolkien", 2));
+    library.addBook(Book("The Lord of the Rings", "J.R.R. Tolkien", 3));
+    library.addBook(Book("The Silmarillion", "J.R.R. Tolkien", 4));
+    library.addBook(Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", 5));
 
+    std::cout << std::endl;
     // Vypiš obsah knihovny
     std::cout << "Books in library:" << std::endl;
     for (const auto& book : library.getBooks()) {
         std::cout << book << std::endl;
     }
-    //vypiš oddělení
     std::cout << std::endl;
 
-    // Vypiš knihy od Jane Austen
-    std::cout << "Books by Jane Austen:" << std::endl;
-    for (const auto& book : library.findByAuthor("Jane Austen")) {
+    // Vypiš knihy od J.R.R. Tolkien
+    std::cout << "Books by J.R.R. Tolkien:" << std::endl;
+    for (const auto& book : library.findByAuthor("J.R.R. Tolkien")) {
         std::cout << book << std::endl;
     }
     std::cout << std::endl;
 
-
-    // Vypiš knihy s názvem "The Great Gatsby"
-    std::cout << "Books with title \"The Great Gatsby\":" << std::endl;
-    for (const auto& book : library.findByTitle("The Great Gatsby")) {
+    //vypiš všechny knihy od J.K. Rowling
+    std::cout << "Books by J.K. Rowling:" << std::endl;
+    for (const auto& book : library.findByAuthor("J.K. Rowling")) {
         std::cout << book << std::endl;
     }
     std::cout << std::endl;
 
-    //remove all book copies of Mockingbird
-    library.removeBookCopies("To Kill a Mockingbird", 3);
+    // Vypiš knihy s názvem "The Hobbit"
+    std::cout << "Books with title \"The Hobbit\":" << std::endl;
+    for (const auto& book : library.findByTitle("The Hobbit")) {
+        std::cout << book << std::endl;
+    }
 
-    //remove some book copies of great gatsby
-    library.removeBookCopies("The Great Gatsby", 3);
+    //Odstraň všechny knihy s názvem "The lord of the rings"
+    library.removeBookCopies("The Lord of the Rings", 3);
 
-    // Vypiš obsah knihovny po odebrání všech kopii Mockingbird a odebrání 3 kopii Gatsby
-    std::cout << std::endl << "Books in library after removing all copies of'To Kill a Mockingbird': and 3 out of 4 copies of The Great Gatsby" << std::endl;
+    //Odstraň několik kopíí knihy "Silmarillion"
+    library.removeBookCopies("The Silmarillion", 3);
+
+    //Nastaví kopie Harryho Pottera na 2
+   library.setCopies("Harry Potter and the Philosopher's Stone", 2);
+
+    // Vypiš obsah knihovny po odebrání všech kopii The Lord of the Rings a odebrání 3 kopii The Silmarillion a nastavení kopii Harryho Pottera na 2
+    std::cout << std::endl << R"(Books in library after removing all copies of "The Lord of the Rings", 3 out of 4 copies of "Silmarillion" and setting Harry Potter copies to 2)" << std::endl;
     for (const auto& book : library.getBooks()) {
         std::cout << book << std::endl;
     }
